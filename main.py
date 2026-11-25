@@ -32,13 +32,18 @@ def resolve_output_dir():
     return os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
 
 
-def main():
-    validate(LINE)
+def write_entry(text):
+    """Write the entry text to entry.txt in the output directory."""
     out_dir = resolve_output_dir()
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
     with open(path, "w", encoding="utf-8") as f:
-        f.write(LINE)
+        f.write(text)
+
+
+def main():
+    validate(LINE)
+    write_entry(LINE)
     print("%d characters" % len(LINE))
     print(LINE)
 
