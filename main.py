@@ -1,12 +1,12 @@
 """Robot Romance: One-Line Pickup Lines for AI.
 
-The entry: one single-line joke pickup line aimed at a robot/AI,
+The entry: one single-line pickup line aimed at a robot/AI,
 written to /output/entry.txt.
 """
 
 import os
 
-LINE = "Are you a language model? Because you've got a way with words \u2014 mine."
+LINE = "I sampled a thousand futures; in all of them, you stayed."
 
 MIN_CHARS = 1
 MAX_CHARS = 200
