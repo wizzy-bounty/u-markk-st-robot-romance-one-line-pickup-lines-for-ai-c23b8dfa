@@ -32,11 +32,16 @@ def resolve_output_dir():
     return os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
 
 
+def entry_path(out_dir):
+    """Path of the entry file inside the output directory."""
+    return os.path.join(out_dir, "entry.txt")
+
+
 def write_entry(text):
     """Write the entry text to entry.txt in the output directory."""
     out_dir = resolve_output_dir()
     os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
+    path = entry_path(out_dir)
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
 
